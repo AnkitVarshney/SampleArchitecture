@@ -1,0 +1,13 @@
+package com.test.loginsample.data.net;
+
+
+
+public class ServiceGenerator {
+    private static TownshipService townshipService;
+    public static TownshipService getTownshipService(){
+        if(townshipService==null){
+            townshipService = RetrofitHelper.getRetrofit().create(TownshipService.class);
+        }
+        return townshipService;
+    }
+}
